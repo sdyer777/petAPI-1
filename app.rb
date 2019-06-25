@@ -15,18 +15,30 @@ get '/' do
     "pets": [
                  { 
                     "id":           1,
-                    "name":         "Patty",  
-                    "location":     "Quincy"
+                    "name":         "Patty",
+                    "type":         "Wheaten",
+                    "breed":        "Terrier",  
+                    "location":     "Quincy",
+                    "latitude":     42.2529,
+                    "longitude":    71.0023
                  },
                  { 
-                    "id":           2,
-                    "name":         "Max",  
-                    "location":     "Chicago"
-                 },
+                  "id":           2,
+                  "name":         "Max",
+                  "type":         "Chocolate",
+                  "breed":        "Labrador Retriever",  
+                  "location":     "Chicago",
+                  "latitude":     41.8781,
+                  "longitude":    87.6298
+               },
                  { 
-                    "id":           3,
-                    "name":         "Fifi",  
-                    "location":     "Paris"
+                  "id":           3,
+                  "name":         "Fifi",
+                  "type":         "Toy",
+                  "breed":        "Poodle",  
+                  "location":     "Paris",
+                  "latitude":     48.8566,
+                  "longitude":    2.3522
                  }
     ] 
 }.to_json
