@@ -1,6 +1,8 @@
 # app.rb
 require 'sinatra'
 require "sinatra/json"
+require 'sinatra/activerecord'
+
 
 get '/' do
   # return json {'text': 'Awesome!'}
