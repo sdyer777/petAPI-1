@@ -1,6 +1,18 @@
 # app.rb
 require 'sinatra'
+require "sinatra/json"
 
 get '/' do
-  'Awesome!'
+  # return json {'text': 'Awesome!'}
+  json text: 'Awesome!'
+end
+
+get '/jonyive' do
+  # return json {'text': 'Aluminium'}
+  json text: 'Aluminium'
+end
+
+get '/timcook' do
+  # return json {'text': 'Gotta raise em Mac price'}
+  json text: 'Gotta raise em Mac price'
 end
