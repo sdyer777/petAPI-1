@@ -10,6 +10,7 @@ require 'pg'
 get '/' do
   conn = PG::Connection.open(ENV['DATABASE_URL'])
   res  = conn.exec('SELECT * from pets')
+  conn.close
   res.to_json
 end
 
@@ -17,6 +18,7 @@ end
 get "/:id" do
   conn = PG::Connection.open(ENV['DATABASE_URL'])
   res  = conn.exec('SELECT * from pets where id = ' + params[:id])
+  conn.close
   res.to_json
 
 #response = 'ID=[' + params[:id] + ']'
