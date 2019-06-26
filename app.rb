@@ -9,7 +9,7 @@ require 'pg'
 # Return all pets
 get '/' do
   conn = PG::Connection.open(ENV['DATABASE_URL'])
-  res  = conn.exec('SELECT table_name FROM information_schema.tables')
+  res  = conn.exec('SELECT * from pets')
   res.to_json
 
 #  abc = 'ABC[' + ENV['DATABASE_URL'] + ']'
