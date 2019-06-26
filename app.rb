@@ -3,14 +3,19 @@ require 'sinatra'
 require "sinatra/json"
 require 'sinatra/activerecord'
 
+require 'pg'
+
 # GET /
 # Return all pets
 get '/' do
-  # return Pet.all
-  # return json {'text': 'Awesome!'}
-  # json text: 'Awesome!'
+  conn = PG::Connection.open(ENV['DATABASE_URL'])
+  res  = conn.exec('SELECT table_name FROM information_schema.tables')
+  res.to_json
+
+  abc = 'ABC[' + ENV['DATABASE_URL'] + ']'
+
+=begin
   content_type :json
-  # { :key1 => 'value1', :key2 => 'value2' }.to_json
   { 
     "pets": [
                  { 
@@ -42,6 +47,8 @@ get '/' do
                  }
     ] 
 }.to_json
+=end
+
 end
 
 # Return specified pet
