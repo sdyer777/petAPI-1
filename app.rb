@@ -16,8 +16,8 @@ get '/' do
                  { 
                     "id":           1,
                     "name":         "Patty",
-                    "type":         "Wheaten",
-                    "breed":        "Terrier",  
+                    "type":         "Dog",
+                    "breed":        "Wheaten Terrier",  
                     "location":     "Quincy",
                     "latitude":     42.2529,
                     "longitude":    71.0023
@@ -25,7 +25,7 @@ get '/' do
                  { 
                   "id":           2,
                   "name":         "Max",
-                  "type":         "Chocolate",
+                  "type":         "Dog",
                   "breed":        "Labrador Retriever",  
                   "location":     "Chicago",
                   "latitude":     41.8781,
@@ -34,8 +34,8 @@ get '/' do
                  { 
                   "id":           3,
                   "name":         "Fifi",
-                  "type":         "Toy",
-                  "breed":        "Poodle",  
+                  "type":         "Dog",
+                  "breed":        "Toy Poodle",  
                   "location":     "Paris",
                   "latitude":     48.8566,
                   "longitude":    2.3522
