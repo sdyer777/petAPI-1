@@ -44,13 +44,17 @@ get '/' do
 }.to_json
 end
 
-
-get '/jonyive' do
-  # return json {'text': 'Aluminium'}
-  json text: 'Aluminium'
+# Return specified pet
+get "/:id" do
+  content_type :json
+  { 
+    "id":           1,
+    "name":         "PattyONE",
+    "type":         "DogONE",
+    "breed":        "Wheaten Terrier",  
+    "location":     "Quincy",
+    "latitude":     42.2529,
+    "longitude":    71.0023
+  }.to_json
 end
 
-get '/timcook' do
-  # return json {'text': 'Gotta raise em Mac price'}
-  json text: 'Gotta raise em Mac price'
-end
