@@ -10,7 +10,9 @@ require 'pg'
 get '/' do
   conn = PG::Connection.open(ENV['DATABASE_URL'])
   res  = conn.exec('SELECT * from pets')
-  res.to_json
+  @petarray = res.to_json
+
+  {'pets' => @petarray}
 
 #  abc = 'ABC[' + ENV['DATABASE_URL'] + ']'
 
