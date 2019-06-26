@@ -9,7 +9,7 @@ require 'pg'
 # Return all pets
 get '/' do
   conn = PG::Connection.open(ENV['DATABASE_URL'])
-  res  = conn.exec('SELECT * from pets')
+  res  = conn.exec('SELECT * from pets order by id')
   conn.close
   res.to_json
 end
