@@ -16,10 +16,10 @@ end
 # Return specified pet
 get "/:id" do
   conn = PG::Connection.open(ENV['DATABASE_URL'])
-  res  = conn.exec('SELECT * from pets where id = ' + params[:id])
+  res  = conn.exec('SELECT * from pets where id = ')
   res.to_json
 
-
+#response = 'ID=[' + params[:id] + ']'
 =begin
   content_type :json
   { 
@@ -31,6 +31,6 @@ get "/:id" do
     "latitude":     42.2529,
     "longitude":    71.0023
   }.to_json
-  =end
+=end
 end
 
