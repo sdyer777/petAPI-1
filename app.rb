@@ -16,7 +16,7 @@ end
 # Return specified pet
 get "/:id" do
   conn = PG::Connection.open(ENV['DATABASE_URL'])
-  res  = conn.exec('SELECT * from pets where id = ')
+  res  = conn.exec('SELECT * from pets where id = ' + params[:id])
   res.to_json
 
 #response = 'ID=[' + params[:id] + ']'
