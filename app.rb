@@ -12,7 +12,7 @@ get '/' do
   res  = conn.exec('SELECT table_name FROM information_schema.tables')
   res.to_json
 
-  abc = 'ABC[' + ENV['DATABASE_URL'] + ']'
+#  abc = 'ABC[' + ENV['DATABASE_URL'] + ']'
 
 =begin
   content_type :json
