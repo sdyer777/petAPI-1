@@ -26,12 +26,6 @@ end
 # POST /addPet
 # create new pet record
 post '/addPet' do
-  puts "GOT TO ADD PET - "  +Time.new.inspect
-  puts "GOT TO ADD PET - zz params next:"
-  puts "GOT TO ADD PET - params=["  + params.to_s + "]"
-  puts "GOT TO ADD PET - headers=["  + headers.to_s + "]"
-  puts "GOT TO ADD PET - name=[" + params[:name] + "]"
-  puts "GOT TO ADD PET - type=[" + params[:type] + "]"
   query = "insert into pets (name, type, breed, location, latitude, longitude) VALUES ("
   query += "'" + params[:name] + "', "
   query += "'" + params[:type] + "', "
