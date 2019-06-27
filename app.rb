@@ -26,11 +26,6 @@ end
 # POST /addPet
 # create new pet record
 post '/addPet' do
-  puts "Got to post/addpet in pet API"
-  puts params[:name]
-  puts params[:type]
-  puts params[:location]
-
   query = "insert into pets (name, type, breed, location, latitude, longitude) VALUES ("
   query += "'" + params[:name] + "', "
   query += "'" + params[:type] + "', "
@@ -38,12 +33,9 @@ post '/addPet' do
   query += "'" + params[:location] + "', "
   query += params[:latitude] + ', '
   query += params[:longitude] + ') '
-  
-  puts query
 
   conn = PG::Connection.open(ENV['DATABASE_URL'])
   res  = conn.exec(query)
   conn.close
-
 end
 
